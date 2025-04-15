@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TC_01_Elements {
-    public TC_01_Elements() {PageFactory.initElements(BaseDriver.driver,this);}
+public class TC_401_Elements {
+    public TC_401_Elements() {PageFactory.initElements(BaseDriver.driver,this);}
 
     @FindBy(xpath="//*[@class='menu-item tg-header-button-wrap tg-header-button-one']")
     public WebElement demo;

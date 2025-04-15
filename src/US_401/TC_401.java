@@ -2,20 +2,19 @@ package US_401;
 
 import Utility.BaseDriver;
 import Utility.MyFunc;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import javax.print.DocFlavor;
 
+public class TC_401 extends BaseDriver {
 
-public class TC_01 extends BaseDriver {
+    @Test(dataProvider = "Data", groups = {"Smoke", "Login"})
+    public void Test1(String username,String password) {
+        TC_401_Elements elements = new TC_401_Elements();
+        LogTutma.info("TC_01 Başladı");
 
-    @Test
-    public void Test1() {
-        TC_01_Elements elements = new TC_01_Elements();
         driver.get("https://openmrs.org/");
         elements.demo.click();
 
@@ -28,8 +27,8 @@ public class TC_01 extends BaseDriver {
 
         elements.explore2.click();
         MyFunc.Bekle(2);
-        elements.username.sendKeys("Gamze");
-        elements.password.sendKeys("1234");
+        elements.username.sendKeys(username);
+        elements.password.sendKeys(password);
         elements.login.click();
 
         Assert.assertTrue(elements.location.getText().contains("You must choose a location!"));
@@ -40,13 +39,19 @@ public class TC_01 extends BaseDriver {
         MyFunc.Bekle(2);
 
 
-        elements.username.sendKeys("Gamze");
-        elements.password.sendKeys("1234");
+        elements.username.sendKeys(username);
+        elements.password.sendKeys(password);
         elements.login.click();
 
 
         Assert.assertTrue(elements.error.getText().contains("Invalid username/password. Please try again."));
 
+        LogTutma.info("TC_01 Tamamlandı");
 
+    }
+    @DataProvider
+    Object[] Data() {
+        Object[][] data = {{"Gamze", "1234"}};
+        return data;
     }
 }
