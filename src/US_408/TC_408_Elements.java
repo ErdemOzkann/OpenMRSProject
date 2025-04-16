@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class TC_01_Elements {
-    public TC_01_Elements() {
+public class TC_408_Elements {
+    public TC_408_Elements() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
