@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class TC_01_Elements {
-    public TC_01_Elements() {PageFactory.initElements(BaseDriver.driver,this);}
+public class TC_401_Elements {
+    public TC_401_Elements() {PageFactory.initElements(BaseDriver.driver,this);}
 
     @FindBy(id = "username")
     public WebElement UserName;
