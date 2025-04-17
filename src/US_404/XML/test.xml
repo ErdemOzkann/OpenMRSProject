@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="All Test Suite" >
+    <test name="Test1">
+        <parameter name="Browser" value="Chrome"></parameter>
+        <classes>
+            <class name="US_404.TC_404_RegisterAPatient_POM">
+            </class>
+        </classes>
+    </test>
+    <test name="Test2">
+        <parameter name="Browser" value="Firefox"></parameter>
+        <classes>
+            <class name="US_404.TC_404_RegisterAPatient_POM">
+            </class>
+        </classes>
+    </test>
+</suite>
