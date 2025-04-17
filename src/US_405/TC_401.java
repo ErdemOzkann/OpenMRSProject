@@ -4,22 +4,23 @@ import Utility.BaseDriver;
 import Utility.MyFunc;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class TC_01 extends BaseDriver {
+public class TC_401 extends BaseDriver {
 
-    @Test(groups = {"Smoke"})
-    public void MyAccount() {
-        TC_01_Elements elements = new TC_01_Elements();
+    @Test(dataProvider = "data" , groups = {"Smoke"})
+    public void MyAccount(String username, String password) {
+        TC_401_Elements elements = new TC_401_Elements();
         LogTutma.info("TC_01 MyAccount Test Basladi.");
 
         driver.get("https://o2.openmrs.org/openmrs/login.htm");
         MyFunc.Bekle(2);
 
-        elements.UserName.sendKeys("admin");
-        elements.Password.sendKeys("Admin123");
+        elements.UserName.sendKeys(username);
+        elements.Password.sendKeys(password);
 
         List<WebElement> loc = elements.Locations;
         int rnd = (int) (Math.random() * loc.size());
@@ -37,5 +38,10 @@ public class TC_01 extends BaseDriver {
 
         LogTutma.info("TC_01 MyAccount Test Bitti.");
 
+    }
+    @DataProvider
+    Object[] data(){
+        Object[][] data = {{"Admin", "Admin123"}};
+        return data;
     }
 }
