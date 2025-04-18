@@ -1,12 +1,14 @@
-package US_401;
+package US_402;
 
 import Utility.BaseDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TC_401_Elements {
-    public TC_401_Elements() {PageFactory.initElements(BaseDriver.driver,this);}
+public class TC_402_Elements {
+
+    public TC_402_Elements() {
+        PageFactory.initElements(BaseDriver.driver,this);}
 
     @FindBy(xpath="//*[@class='menu-item tg-header-button-wrap tg-header-button-one']")
     public WebElement demo;
@@ -31,9 +33,4 @@ public class TC_401_Elements {
 
     @FindBy(id = "sessionLocationError")
     public WebElement location;
-
-    @FindBy(id = "error-message")
-    public WebElement error;
-
-
 }

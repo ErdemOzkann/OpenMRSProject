@@ -3,6 +3,7 @@ package US_404;
 import Utility.BaseDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 public class TC_404_RegisterAPatient extends BaseDriver {
@@ -14,6 +15,8 @@ public class TC_404_RegisterAPatient extends BaseDriver {
 
         WebElement username = driver.findElement(By.id("username"));
         username.sendKeys("Admin");
+
+
 
         WebElement password = driver.findElement(By.id("password"));
         password.sendKeys("Admin123");
