@@ -29,6 +29,7 @@ public class TC_402 extends BaseDriver {
         MyFunc.Bekle(2);
         elements.username.sendKeys(username);
         elements.password.sendKeys(password);
+        elements.inpatient.click();
         elements.login.click();
 
         LogTutma.info("TC_01 Tamamlandı");

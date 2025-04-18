@@ -50,7 +50,7 @@ public class TC_401 extends BaseDriver {
 
     @DataProvider
     Object[] Data() {
-        Object[][] data = {{"Gamze", "1234"}, {"Gmze", "2s321"}, {"", ""}, {"", ""}, {"", ""}};
+        Object[][] data = {{"Gamze", "1234"}, {"Gmze", "2s321"}, {"", ""}, {"Gamzee", "12121"}, {"g111", "5474647"}};
         return data;
     }
 }
