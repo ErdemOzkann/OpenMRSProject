@@ -32,6 +32,5 @@ public class TC_401_Elements {
     @FindBy(id = "sessionLocationError")
     public WebElement location;
 
-    @FindBy(id = "error-message")
-    public WebElement error;
+
 }
