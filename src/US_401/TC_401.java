@@ -42,7 +42,6 @@ public class TC_401 extends BaseDriver {
         elements.password.sendKeys(password);
         elements.login.click();
 
-
         Assert.assertTrue(elements.error.getText().contains("Invalid username/password. Please try again."));
 
         LogTutma.info("TC_01 Tamamlandı");
@@ -51,9 +50,7 @@ public class TC_401 extends BaseDriver {
 
     @DataProvider
     Object[] Data() {
-        Object[][] data = {{"Gamze", "1234"}};
+        Object[][] data = {{"Gamze", "1234"}, {"Gmze", "2s321"}, {"", ""}, {"", ""}, {"", ""}};
         return data;
     }
-
-
 }

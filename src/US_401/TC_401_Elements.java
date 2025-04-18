@@ -34,6 +34,4 @@ public class TC_401_Elements {
 
     @FindBy(id = "error-message")
     public WebElement error;
-
-
 }

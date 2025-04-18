@@ -5,7 +5,7 @@ import Utility.MyFunc;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TC_01 extends BaseDriver{
+public class TC_403 extends BaseDriver {
 
     @Test(dataProvider = "Logout", groups = {"Logout", "Smoke"})
     public void TC_01(String username, String password) {
@@ -23,11 +23,11 @@ public class TC_01 extends BaseDriver{
         elements.logoutBtn.click();
     }
 
-        @DataProvider
-        Object[] Logout() {
-            Object[][] Logout = {{"admin", "Admin123"}};
-            return Logout;
-        }
+    @DataProvider
+    Object[] Logout() {
+        Object[][] Logout = {{"admin", "Admin123"}};
+        return Logout;
+    }
 
 
 }

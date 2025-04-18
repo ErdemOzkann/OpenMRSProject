@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class TC_401 extends BaseDriver {
+public class TC_405 extends BaseDriver {
 
     @Test(dataProvider = "data" , groups = {"Smoke"})
     public void MyAccount(String username, String password) {
-        TC_401_Elements elements = new TC_401_Elements();
+        TC_405_Elements elements = new TC_405_Elements();
         LogTutma.info("TC_01 MyAccount Test Basladi.");
 
         driver.get("https://o2.openmrs.org/openmrs/login.htm");

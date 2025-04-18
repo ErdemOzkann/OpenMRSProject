@@ -7,7 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TC_01_Negative extends BaseDriver {
+
+public class TC_407 extends BaseDriver {
+
 
     @Test(dataProvider = "Data1", groups = {"Smoke", "PatientManagement"})
     public void Test(String username, String password) {
@@ -18,8 +20,21 @@ public class TC_01_Negative extends BaseDriver {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void As_a_Admin_Login_Accaount(String username, String password) {
-        TC_01_Elements elements = new TC_01_Elements();
+        TC_407_Elements elements = new TC_407_Elements();
         driver.get("https://o2.openmrs.org/openmrs/login.htm");
         MyFunc.Bekle(1);
         elements.userName.sendKeys(username);
@@ -34,31 +49,16 @@ public class TC_01_Negative extends BaseDriver {
     }
 
     public void Find_And_Delete_User() {
-        TC_01_Elements elements = new TC_01_Elements();
+        TC_407_Elements elements = new TC_407_Elements();
         elements.findPatientRecord.click();
-        elements.searchBtn.sendKeys("test1");
+        elements.searchBtn.sendKeys("test");
         elements.firstPatient.click();
         elements.deletePatiens.click();
         wait.until(ExpectedConditions.visibilityOf(elements.deleteReason));
-        elements.deleteReason.sendKeys("?!1"); // burada rakam veya ozel isaret girdigimizde de ayni sekilde hastayi silebiliyoruz.
-        //Örnek Silme Sebepleri:
-        //Gizlilik
-        //Hatalı Bilgi
-        //İlişkilendirme Hatası
-        //Vefat: Decease
-        //Hasta Talebi
-        //Hukuki Gerekçe
-        //Güvenlik İhlali
-        //Veritabanı Sorunu
-
-        //  Yukarida da belirtildigi gibi ornek silme sebepleri bulunmaktadir.
-        // Fakat herhangi ozel karakter veya integer girdi dahi olsa hasta basari ile silinmektedir.
-
+        elements.deleteReason.sendKeys("Hasta Talebi");
         wait.until(ExpectedConditions.elementToBeClickable(elements.confirmDelete));
         elements.confirmDelete.click();
 
         Assert.assertEquals(elements.successfulDelete.getText(), "Patient has been deleted successfully");
-
-        // Sonuc olarak bu test basarisiz olmasi gerek ama hasta basarili bir sekilde silindi
     }
 }

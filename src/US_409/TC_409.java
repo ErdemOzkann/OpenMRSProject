@@ -1,6 +1,6 @@
 package US_409;
 
-import US_407.TC_01;
+import US_407.TC_407;
 import Utility.BaseDriver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +18,7 @@ public class TC_409 extends BaseDriver {
     @Test(dataProvider = "Data3", groups = {"Smoke", "PatientManagement"})
     public void Test(String username, String password) {
 
-        US_407.TC_01 login = new TC_01();
+        TC_407 login = new TC_407();
 
         login.As_a_Admin_Login_Accaount(username, password);
         registerPatient_And_Merge_Patient();

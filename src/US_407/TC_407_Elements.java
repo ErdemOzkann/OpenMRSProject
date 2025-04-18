@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TC_01_Elements {
+public class TC_407_Elements {
 
 
 
-    public TC_01_Elements () {
+    public TC_407_Elements() {
         PageFactory.initElements(BaseDriver.driver,this);
 
     }
