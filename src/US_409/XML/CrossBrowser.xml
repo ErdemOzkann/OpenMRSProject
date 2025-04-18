@@ -4,14 +4,14 @@
     <test name="Test01">
         <parameter name="BrowserTipi" value="Chrome"></parameter>
         <classes>
-            <class name="US_408.TC_408">
+            <class name="US_409.TC_409">
             </class>
         </classes>
     </test>
     <test name="Test02">
         <parameter name="BrowserTipi" value="Edge"></parameter>
         <classes>
-            <class name="US_408.TC_408">
+            <class name="US_409.TC_409">
             </class>
         </classes>
     </test>

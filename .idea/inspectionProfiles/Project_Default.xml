@@ -6,12 +6,3 @@
         <value>
           <list size="4">
             <item index="0" class="java.lang.String" itemvalue="Regression" />
-            <item index="1" class="java.lang.String" itemvalue="PatientManagement" />
-            <item index="2" class="java.lang.String" itemvalue="Appointment" />
-            <item index="3" class="java.lang.String" itemvalue="AppointMent" />
-          </list>
-        </value>
-      </option>
-    </inspection_tool>
-  </profile>
-</component>

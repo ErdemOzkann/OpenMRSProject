@@ -7,11 +7,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-public class TC_01 extends BaseDriver {
+public class TC_408 extends BaseDriver {
 
     @Test(dataProvider = "Data", groups = {"Regression", "PatientManagement"})
     public void TC_01(String username, String password) {
-        TC_01_Elements elements = new TC_01_Elements();
+        TC_408_Elements elements = new TC_408_Elements();
 
         LogTutma.info("TC_01 Başladı");
 
