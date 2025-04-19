@@ -1,7 +1,7 @@
 package US_409;
 
 import US_407.TC_407;
-import US_407.TC_407_Elements;
+import Utility.BaseDriverParameter;
 import Utility.MyFunc;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +19,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TC_409 {
+public class TC_409_CrossTesting extends BaseDriverParameter {
 
     @Test(dataProvider = "Data3", groups = {"Smoke", "PatientManagement"})
     public void Test(String username, String password) {
@@ -45,11 +45,6 @@ public class TC_409 {
     }
 
     public void registerPatient_And_Merge_Patient() {
-
-        driver.manage().window().maximize(); // Ekranı max yapıyor.
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti
-
         TC_409_Elements elements = new TC_409_Elements(driver);
 
         List<String> patientIDs = new ArrayList<>();
@@ -95,12 +90,7 @@ public class TC_409 {
 
         Assert.assertEquals(firstID, patientIDs.get(1));
         Assert.assertEquals(secondID, patientIDs.get(0));
-
-        MyFunc.Bekle(3);
-        driver.quit();
     }
 
-    public static WebDriver driver = new ChromeDriver();
     public static Logger LogTutma = LogManager.getLogger();      //Logları ekliceğim nesneyi başlattım.
-    public static WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 }

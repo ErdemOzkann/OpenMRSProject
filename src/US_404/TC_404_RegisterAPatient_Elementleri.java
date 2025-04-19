@@ -1,14 +1,14 @@
 package US_404;
 
-import Utility.BaseDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TC_404_RegisterAPatient_Elementleri {
 
-    public TC_404_RegisterAPatient_Elementleri(){
-        PageFactory.initElements(BaseDriver.driver, this);
+    public TC_404_RegisterAPatient_Elementleri(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "username")
@@ -67,7 +67,4 @@ public class TC_404_RegisterAPatient_Elementleri {
 
     @FindBy(id = "submit")
     public WebElement confirm;
-
-
-
 }

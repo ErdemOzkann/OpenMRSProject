@@ -1,18 +1,29 @@
 package US_401;
 
-import Utility.BaseDriver;
+import Utility.BaseDriverParameter;
 import Utility.MyFunc;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 
-public class TC_401 extends BaseDriver {
+
+public class TC_401 {
 
     @Test(dataProvider = "Data", groups = {"Smoke", "Login"})
     public void Test1(String username, String password) {
-        TC_401_Elements elements = new TC_401_Elements();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize(); // Ekranı max yapıyor.
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti
+
+        TC_401_Elements elements = new TC_401_Elements(driver);
         LogTutma.info("TC_01 Başladı");
 
         driver.get("https://openmrs.org");
@@ -46,6 +57,9 @@ public class TC_401 extends BaseDriver {
 
         LogTutma.info("TC_01 Tamamlandı");
 
+        MyFunc.Bekle(3);
+        driver.quit();
+
     }
 
     @DataProvider
@@ -53,4 +67,6 @@ public class TC_401 extends BaseDriver {
         Object[][] data = {{"Gamze", "1234"}, {"Gmze", "2s321"}, {"", ""}, {"Gamzee", "12121"}, {"g111", "5474647"}};
         return data;
     }
+
+    public static Logger LogTutma = LogManager.getLogger();      //Logları ekliceğim nesneyi başlattım.
 }

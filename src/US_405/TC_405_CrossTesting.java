@@ -14,15 +14,10 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class TC_405  {
+public class TC_405_CrossTesting extends BaseDriverParameter {
 
     @Test(dataProvider = "data", groups = {"Smoke"})
     public void MyAccount(String username, String password) {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize(); // Ekranı max yapıyor.
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti
-
         TC_405_Elements elements = new TC_405_Elements(driver);
         LogTutma.info("TC_01 MyAccount Test Basladi.");
 
@@ -47,10 +42,6 @@ public class TC_405  {
         elements.MyLanguages.click();
 
         LogTutma.info("TC_01 MyAccount Test Bitti.");
-
-        MyFunc.Bekle(3);
-        driver.quit();
-
     }
 
     @DataProvider

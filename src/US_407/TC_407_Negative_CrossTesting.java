@@ -14,8 +14,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class TC_407_Negative  {
-    public static WebDriver driver = new ChromeDriver();
+public class TC_407_Negative_CrossTesting extends BaseDriverParameter {
 
     @Test(dataProvider = "Data1", groups = {"Smoke", "PatientManagement"})
     public void Test(String username, String password) {
@@ -25,11 +24,6 @@ public class TC_407_Negative  {
     }
 
     public void As_a_Admin_Login_Accaount(String username, String password) {
-
-        driver.manage().window().maximize(); // Ekranı max yapıyor.
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti
-
         TC_407_Elements elements = new TC_407_Elements(driver);
         driver.get("https://o2.openmrs.org/openmrs/login.htm");
         MyFunc.Bekle(1);
@@ -37,9 +31,6 @@ public class TC_407_Negative  {
         elements.password.sendKeys(password);
         elements.inpatientWard.click();
         elements.loginBTN.click();
-
-        MyFunc.Bekle(3);
-        driver.quit();
     }
 
     @DataProvider
@@ -49,10 +40,6 @@ public class TC_407_Negative  {
     }
 
     public void Find_And_Delete_User() {
-        driver.manage().window().maximize(); // Ekranı max yapıyor.
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti
-
         TC_407_Elements elements = new TC_407_Elements(driver);
         elements.findPatientRecord.click();
         elements.searchBtn.sendKeys("test1");
@@ -78,12 +65,8 @@ public class TC_407_Negative  {
 
         Assert.assertEquals(elements.successfulDelete.getText(), "Patient has been deleted successfully");
 
-        MyFunc.Bekle(3);
-        driver.quit();
-
         // Sonuc olarak bu test basarisiz olmasi gerek ama hasta basarili bir sekilde silindi
     }
 
     public static Logger LogTutma = LogManager.getLogger();      //Logları ekliceğim nesneyi başlattım.
-    public static WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 }

@@ -1,17 +1,15 @@
 package US_406;
 
-import Utility.BaseDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TC_406_Elements {
 
-    public TC_406_Elements()
-    {
-        PageFactory.initElements(BaseDriver.driver,this);
+    public TC_406_Elements(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
-
 
     @FindBy(id = "username")
     public WebElement userName;
@@ -33,6 +31,4 @@ public class TC_406_Elements {
 
     @FindBy(xpath = "//*[@class='odd']/td")
     public WebElement NoMatching;
-
-
 }

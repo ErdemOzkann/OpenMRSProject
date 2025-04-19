@@ -1,21 +1,26 @@
 package US_404;
 
-import Utility.BaseDriver;
+import Utility.BaseDriverParameter;
 import Utility.MyFunc;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TC_404_RegisterAPatient_POM extends BaseDriver {
+import java.time.Duration;
+
+public class TC_404_CrossTesting extends BaseDriverParameter {
 
     @Test(dataProvider = "datalarim", groups = {"Regression"})
-    public void registerAPatient(String username , String password)
-    {
+    public void registerAPatient(String username, String password) {
         LogTutma.info("registerAPatient testi basladi");
 
-        TC_404_RegisterAPatient_Elementleri rp = new TC_404_RegisterAPatient_Elementleri();
+        TC_404_RegisterAPatient_Elementleri rp = new TC_404_RegisterAPatient_Elementleri(driver);
 
         driver.get("https://o2.openmrs.org/openmrs/login.htm");
 
@@ -46,12 +51,12 @@ public class TC_404_RegisterAPatient_POM extends BaseDriver {
 
         MyFunc.Bekle(2);
 
-        WebElement hastaIsmi=driver.findElement(By.cssSelector("[class='PersonName-familyName']"));
-        WebElement hastaID= driver.findElement(By.xpath("//*[text()='Patient ID']"));
+        WebElement hastaIsmi = driver.findElement(By.cssSelector("[class='PersonName-familyName']"));
+        WebElement hastaID = driver.findElement(By.xpath("//*[text()='Patient ID']"));
 
 
-        Assert.assertTrue(hastaIsmi.getText().contains("Cruijff") , "Boyle bir isim ile bir kayit yok");
-        Assert.assertTrue(hastaID.getText().contains("Patient ID") , "Boyle bir ID ile bir kayit yok");
+        Assert.assertTrue(hastaIsmi.getText().contains("Cruijff"), "Boyle bir isim ile bir kayit yok");
+        Assert.assertTrue(hastaID.getText().contains("Patient ID"), "Boyle bir ID ile bir kayit yok");
 
         System.out.println("Isim = " + hastaIsmi.getText());
         System.out.println("ID = " + hastaID.getText());
@@ -60,10 +65,11 @@ public class TC_404_RegisterAPatient_POM extends BaseDriver {
     }
 
     @DataProvider
-    Object[] datalarim(){
-        Object[][] bilgiler={{"Admin","Admin123"}};
+    Object[] datalarim() {
+        Object[][] bilgiler = {{"Admin", "Admin123"}};
 
         return bilgiler;
     }
 
+    public static Logger LogTutma = LogManager.getLogger();      //Logları ekliceğim nesneyi başlattım.
 }

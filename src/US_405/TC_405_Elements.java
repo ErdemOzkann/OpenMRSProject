@@ -1,6 +1,6 @@
 package US_405;
 
-import Utility.BaseDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class TC_405_Elements {
-    public TC_405_Elements() {PageFactory.initElements(BaseDriver.driver,this);}
+    public TC_405_Elements(WebDriver driver) {PageFactory.initElements(driver,this);}
 
     @FindBy(id = "username")
     public WebElement UserName;
@@ -33,5 +33,4 @@ public class TC_405_Elements {
 
     @FindBy(linkText = "My Languages")
     public WebElement MyLanguages;
-
 }

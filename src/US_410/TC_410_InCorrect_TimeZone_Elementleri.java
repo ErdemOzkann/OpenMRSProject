@@ -1,14 +1,14 @@
 package US_410;
 
-import Utility.BaseDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TC_410_InCorrect_TimeZone_Elementleri {
 
-    public TC_410_InCorrect_TimeZone_Elementleri(){
-        PageFactory.initElements(BaseDriver.driver, this);
+    public TC_410_InCorrect_TimeZone_Elementleri(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "username")
@@ -37,8 +37,4 @@ public class TC_410_InCorrect_TimeZone_Elementleri {
 
     @FindBy(css = "[id='time-zone-warning']>:nth-child(1)>:nth-child(1)>:nth-child(2)")
     public WebElement timeZoneMsg;
-
-
-
-
 }

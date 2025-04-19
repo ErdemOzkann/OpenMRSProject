@@ -2,16 +2,16 @@
 
 <suite name="All Test Suite" >
     <test name="Test1">
-        <parameter name="Browser" value="Chrome"></parameter>
+        <parameter name="BrowserTipi" value="Chrome"></parameter>
         <classes>
-            <class name="US_411.TC_411_TimeZone_POM">
+            <class name="US_411.TC_411_CrossTesting">
             </class>
         </classes>
     </test>
     <test name="Test2">
-        <parameter name="Browser" value="Firefox"></parameter>
+        <parameter name="BrowserTipi" value="Firefox"></parameter>
         <classes>
-            <class name="US_411.TC_411_TimeZone_POM">
+            <class name="US_411.TC_411_CrossTesting">
             </class>
         </classes>
     </test>

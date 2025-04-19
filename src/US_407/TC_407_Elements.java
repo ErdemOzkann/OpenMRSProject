@@ -1,6 +1,6 @@
 package US_407;
 
-import Utility.BaseDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,8 +9,8 @@ public class TC_407_Elements {
 
 
 
-    public TC_407_Elements() {
-        PageFactory.initElements(BaseDriver.driver,this);
+    public TC_407_Elements(WebDriver driver) {
+        PageFactory.initElements(driver,this);
 
     }
     @FindBy(id = "username")
