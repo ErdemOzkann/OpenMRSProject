@@ -14,9 +14,11 @@ import java.time.Duration;
 
 public class TC_408 {
 
+    public WebDriver driver = new ChromeDriver();
+
     @Test(dataProvider = "Data", groups = {"Regression", "PatientManagement"})
     public void TC_01(String username, String password) {
-        WebDriver driver = new ChromeDriver();
+
         driver.manage().window().maximize(); // Ekranı max yapıyor.
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti

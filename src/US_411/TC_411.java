@@ -12,11 +12,11 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class TC_411 {
-
+    public WebDriver driver = new ChromeDriver();
 
     @Test(dataProvider = "datalarim", groups = {"Regression", "Appointment"})
     public void TimeZone(String username, String password, String patientname) {
-        WebDriver driver = new ChromeDriver();
+
         driver.manage().window().maximize(); // Ekranı max yapıyor.
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // 5 sn mühlet: elementi bulma mühleti
