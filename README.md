@@ -6,13 +6,13 @@ This project includes automation tests for essential user operations on the Open
 
 | Username            | Commits       | Lines Added     | Lines Deleted   |
 |---------------------|---------------|------------------|------------------|
-| `palanque92`        | 6             | 464              | 1                |
-| `GAMZE3845`         | 5             | 744              | 265              |
-| `ErdemOzkan`        | 5             | 2,133            | 1,010            |
-| `BarisSaydam`       | 3             | 236              | 101              |
-| `AtillaTorosAvci`   | 1             | 723              | 1                |
-| `diyarolmezz`       | 1             | 176              | 0                |
-| `Ebubekir2025`      | 1             | 3                | 0                |
+| **[Ömer Boncuk](https://github.com/palanque92)**       | 6             | 464              | 1                |
+| **[Gamze Batmaz](https://github.com/GAMZE3845/)**         | 5             | 744              | 265              |
+| **[Erdem Özkan](https://github.com/ErdemOzkann)**        | 5             | 2,133            | 1,010            |
+| **[Barış Saydam](https://github.com/BarisSaydam)**       | 3             | 236              | 101              |
+| **[Atilla Toros Avcı](https://github.com/AtillaTorosAvci)**    | 1             | 723              | 1                |
+|**[Diyar ölmez](https://github.com/diyarolmezz)**       | 1             | 176              | 0                |
+| **[Ebubekir Duvarcı](https://github.com/Ebubekir2025)**      | 1             | 3                | 0                |
 
 ## 🛠 Technologies Used
 
